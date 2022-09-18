@@ -9,4 +9,5 @@ interface MarvelApiService {
 
     @GET("characters")
     suspend fun getCharacter(): Single<Response<CharacterResponse>>
+
 }

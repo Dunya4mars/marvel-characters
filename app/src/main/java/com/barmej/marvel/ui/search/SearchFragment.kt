@@ -1,8 +1,8 @@
-package com.barmej.marvelcharacter.ui.search
+package com.barmej.marvel.ui.search
 
-import com.barmej.marvelcharacter.R
-import com.barmej.marvelcharacter.databinding.FragmentSearhcBinding
-import com.barmej.marvelcharacter.ui.base.BaseFragment
+import com.barmej.marvel.R
+import com.barmej.marvel.databinding.FragmentSearhcBinding
+import com.barmej.marvel.ui.base.BaseFragment
 
 
 class SearchFragment : BaseFragment<FragmentSearhcBinding, SearchViewModel>(){

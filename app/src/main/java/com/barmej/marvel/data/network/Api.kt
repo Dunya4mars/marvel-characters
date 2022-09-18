@@ -12,10 +12,10 @@ import retrofit2.http.Query
 object Api {
     private val interceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
-        @Query("ts") apiKet: String = Constant.ts,
-        @Query("apikey") ts: String = Constant.API_KEY,
-        @Query("hash") hash: String = Constant.hash(),
-        @Query("limit") limit: String = Constant.limit,
+//        @Query("ts") apiKet: String = Constant.ts,
+//        @Query("apikey") ts: String = Constant.API_KEY,
+//        @Query("hash") hash: String = Constant.hash(),
+//        @Query("limit") limit: String = Constant.limit,
 
 
     }

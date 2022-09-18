@@ -5,20 +5,19 @@
    >
 
     <data>
+                <variable
+                    name="item"
+                    type="com.barmej.marvel.data.model.character.CharacterResponse" />
 
-        <import type="android.text.Html" />
+        <!--        <variable-->
+        <!--            name="listener"-->
+        <!--            type="com.karrar.betterlife.ui.HabitInteractionListener" />-->
+        <variable
+            name="viewModel"
+            type="com.barmej.marvel.ui.home.HomeViewModel" />
     </data>
 
-<!--        <variable-->
-<!--            name="item"-->
-<!--            type="com.karrar.betterlife.data.database.entity.Habit" />-->
 
-<!--        <variable-->
-<!--            name="listener"-->
-<!--            type="com.karrar.betterlife.ui.HabitInteractionListener" />-->
-<!--        <variable-->
-<!--            name="viewModel"-->
-<!--            type="com.karrar.betterlife.ui.edit.EditHabitViewModel" />-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_list_habit"
@@ -33,6 +32,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="125dp"
+            app:items=""
             android:background="#2F727A">
 
             <ImageView
@@ -42,6 +42,7 @@
                 android:layout_marginStart="16dp"
                 android:src="@drawable/ic_launcher_background"
                 app:cardCornerRadius="8dp"
+                android:onClick=""
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHeight_percent="0.90"
                 app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +58,8 @@
                 android:elevation="2dp"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                app:isSuccess="@{viewModel.character}"
+                android:text="@{item.data.results.}"
                 android:layout_marginStart="16dp"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent"
@@ -79,6 +82,8 @@
                 android:layout_height="wrap_content"
                 android:elevation="2dp"
                 android:hint="name"
+                app:isSuccess="@{viewModel.character}"
+                android:text="@{viewModel.character.toData().}"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -87,9 +92,9 @@
                 tools:text="sub title" />
 
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
 </layout>
-

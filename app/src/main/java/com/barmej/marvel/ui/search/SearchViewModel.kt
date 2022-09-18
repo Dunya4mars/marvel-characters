@@ -1,18 +1,10 @@
-package com.barmej.marvelcharacter.ui.search
-
+package com.barmej.marvel.ui.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.barmej.marvelcharacter.util.Event
+import com.barmej.marvel.util.Event
 
 class SearchViewModel : ViewModel() {
 
-    private val _navigateToGameFragment = MutableLiveData(Event(false))
-    val navigateToGameFragment: LiveData<Event<Boolean>>
-        get() = _navigateToGameFragment
-
-    fun navigateToGameFragment() {
-        _navigateToGameFragment.postValue(Event(true))
-    }
 }

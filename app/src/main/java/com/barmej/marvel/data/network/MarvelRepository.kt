@@ -23,6 +23,5 @@ class MarvelRepository {
 
 }
 
-private fun <T> wrapperWithState(function: () -> Observable<Response<T>>): Observable<State<T>> {
 
 
