@@ -1,7 +1,6 @@
 package com.barmej.marvel.data.network
 
 import com.barmej.marvel.data.State
-import com.barmej.marvel.data.model.character.CharacterResponse
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Response
@@ -9,22 +8,11 @@ import retrofit2.Response
 class MarvelRepository {
 
     suspend fun getCharacter(): Single<State<MarvelRepository?>> {
-        return Api.marvelService.getCharacter().body()
+        return wrapperWithState(Api.marvelService.getCharacter())
     }
 
-//    suspend fun getRandomJoke() : Flow<jokeReponse?>{
-//        return flow {
-//        emit(Api.marvelService.getRandomJoke().body())
-//    }
-//    }
-
-//    suspend fun getRandomJoke() : Response<jokeReponse>
-//    {    return Api.apiService.getRandomJoke()
-//    }
-    //suspend fun getRandomJoke() = Api.apiService.getRandomJoke()
-
-    private fun <T> wrapperWithState(function: () -> Observable<Response<T>>): Observable<State<T>> {
-        return function().map {
+    private fun <T> wrapperWithState(responseGetCharacter: Single<Response<T>>): Single<State<T>> {
+        return responseGetCharacter.map {
             if (it.isSuccessful) {
                 State.Success(it.body())
             } else {
@@ -34,3 +22,7 @@ class MarvelRepository {
     }
 
 }
+
+private fun <T> wrapperWithState(function: () -> Observable<Response<T>>): Observable<State<T>> {
+
+

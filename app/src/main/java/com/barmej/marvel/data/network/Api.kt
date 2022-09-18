@@ -6,11 +6,18 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Query
 
 
 object Api {
     private val interceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
+        @Query("ts") apiKet: String = Constant.ts,
+        @Query("apikey") ts: String = Constant.API_KEY,
+        @Query("hash") hash: String = Constant.hash(),
+        @Query("limit") limit: String = Constant.limit,
+
+
     }
     private val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 

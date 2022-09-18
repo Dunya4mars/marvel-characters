@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.barmej.marvelcharacter.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detilesFragment"
+            app:destination="@id/detilesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.barmej.marvelcharacter.ui.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_searhc">
+        <action
+            android:id="@+id/action_gameFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.barmej.marvelcharacter.ui.home.HomeFragment"
+        android:label="FavortyFragment"
+        tools:layout="@layout/fragment_favorte">
+
+    </fragment>
+    <fragment
+        android:id="@+id/detilesFragment"
+        android:name="com.barmej.marvelcharacter.ui.home.HomeFragment"
+        android:label="DetilsFragment"
+        tools:layout="@layout/fragment_detales">
+
+    </fragment>
+</navigation>
